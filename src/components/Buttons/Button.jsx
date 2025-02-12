@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Button = ({
   text = "Click Me",
@@ -7,16 +7,26 @@ const Button = ({
   size = "medium",
   color = "blue",
   border = "none",
+  hoverColor,
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const sizes = {
-    small: "8px 16px",
-    medium: "10px 20px",
-    large: "12px 44px",
+    small: "9px 16px",
+    medium: "9px 20px",
+    large: "9px 44px",
   };
 
   const colors = {
     blue: "#007bff",
     transparent: "rgba(0,0,0,0)",
+    colored: "#007bff",
+  };
+
+  const hoverColors = {
+    blue: "#0056b3", // Darker blue on hover
+    transparent: "rgba(0,0,50,0.1)",
+    colored: "#0056b3",
   };
 
   const borders = {
@@ -28,16 +38,22 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
-        backgroundColor: colors[color] || colors.blue,
+        backgroundColor: isHovered
+          ? hoverColor in colors
+            ? colors[hoverColor] // Ensure hoverColor maps correctly
+            : hoverColors[color] || hoverColors["blue"] // Fallback if hoverColor is invalid
+          : colors[color] || colors["blue"],
         color: "#fff",
         padding: sizes[size] || sizes.medium,
-        border: "none",
+        border: borders[border] || borders.none,
         borderRadius: "5px",
         cursor: "pointer",
         fontSize: "16px",
         margin: "5px",
-        border: borders[border] || border.none,
+        transition: "background-color 0.3s ease",
       }}
     >
       {text}
