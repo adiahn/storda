@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
+import Logo from "../../assets/img/logo_small.png";
 
 const NavLink = ({ href, children }) => (
   <a
@@ -25,9 +26,10 @@ const Navbar = () => {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="flex h-16 items-center justify-between">
-          <a href="/" className="flex items-center">
+      <div className="mx-auto max-w-9xl p-4 ">
+        <div className="flex h-16 items-center justify-evenly">
+          <a href="/" className="flex items-center justify-between w-[8vw]">
+            <img src={Logo} alt="" className="w-10" />
             <h1 className="text-2xl font-bold uppercase tracking-tight text-white">
               Stodar
             </h1>
