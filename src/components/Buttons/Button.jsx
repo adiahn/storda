@@ -8,6 +8,7 @@ const Button = ({
   color = "blue",
   border = "none",
   hoverColor,
+  width = "large",
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -15,6 +16,12 @@ const Button = ({
     small: "9px 16px",
     medium: "9px 20px",
     large: "9px 44px",
+  };
+
+  const widths = {
+    small: "100px",
+    medium: "150px",
+    large: "200px",
   };
 
   const colors = {
@@ -52,8 +59,8 @@ const Button = ({
         borderRadius: "5px",
         cursor: "pointer",
         fontSize: "16px",
-        margin: "5px",
         transition: "background-color 0.3s ease",
+        width: "200px",
       }}
     >
       {text}
