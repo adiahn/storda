@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="mx-auto max-w-9xl p-4 ">
         <div className="flex h-16 items-center justify-evenly">
-          <a href="/" className="flex items-center justify-between w-[8vw]">
+          <a href="/" className="flex items-center justify-between w-auto">
             <img src={Logo} alt="" className="w-10" />
             <h1 className="text-2xl font-bold uppercase tracking-tight text-white">
               Stodar
@@ -41,7 +41,7 @@ const Navbar = () => {
               <input
                 type="search"
                 placeholder="Search..."
-                className="w-96 rounded-lg border border-gray-200  py-2 pl-10 pr-4 outline-none "
+                className="w-96 rounded-lg text-black border border-gray-200  py-2 pl-10 pr-4 outline-none "
                 aria-label="Search"
               />
             </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
 
           <button
             type="button"
-            className="rounded-lg p-2 text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 md:hidden"
+            className="rounded-lg p-2 text-white focus:outline-none md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
@@ -87,7 +87,7 @@ const Navbar = () => {
               <input
                 type="search"
                 placeholder="Search..."
-                className="w-full rounded-lg border border-gray-200 bg-gray-50  pl-10 pr-4 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+                className="w-full rounded-lg border border-gray-200  pl-10 pr-4 outline-none py-2"
                 aria-label="Search"
               />
             </div>
