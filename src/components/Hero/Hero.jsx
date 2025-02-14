@@ -1,5 +1,8 @@
 import React from "react";
 import Button from "../Buttons/Button";
+import mockup from "../../assets/img/mockup.png";
+import PlayStore from "../../assets/img/3.png";
+import AppStore from "../../assets/img/2.png";
 
 const Hero = () => {
   return (
@@ -29,7 +32,21 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="bg-white w-[40vw] h-[70vh] m-5"></div>
+      <div className="w-[40vw] h-[70vh] m-5 flex justify-between items-center rounded-lg">
+        <img src={mockup} alt="hero" className="w-2/3" />
+        <div className="w-1/3 h-full rounded-lg flex flex-col justify-center items-start gap-6">
+          <img
+            src={PlayStore}
+            alt=""
+            className="w-[10vw] hover:cursor-pointer"
+          />
+          <img
+            src={AppStore}
+            alt=""
+            className="w-[10vw] hover:cursor-pointer  "
+          />
+        </div>
+      </div>
     </div>
   );
 };
