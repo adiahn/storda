@@ -7,7 +7,7 @@ import AppStore from "../../assets/img/2.png";
 const Hero = () => {
   return (
     <div className="flex justify-center ">
-      <div className="p-4 flex flex-col justify-evenly items-left m-5 w-[50vw] h-[60vh]">
+      <div className="p-4 flex flex-col justify-evenly items-left m-5 w-[50vw] h-[55vh]">
         <h1 className="text-5xl font-bold">Your Devices, Your Control.</h1>
         <p className="text-2xl text-left w-2/2">
           Easily register, verify, and protect your mobile devices. Transfer
