@@ -15,10 +15,10 @@ const NavLink = ({ href, children }) => (
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigationLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Features", href: "/" },
+    { name: "Learn", href: "/learn" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact Us", href: "/contact" },
   ];
   return (
     <nav
@@ -27,26 +27,29 @@ const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-9xl p-4 ">
-        <div className="flex h-16 items-center justify-evenly">
-          <a href="/" className="flex items-center justify-between w-auto">
-            <img src={Logo} alt="" className="w-10" />
-            <h1 className="text-2xl font-bold uppercase tracking-tight text-white">
+        <div className="flex h-16 items-center justify-between px-10 md:px-5">
+          <a
+            href="/"
+            className="flex items-center justify-between gap-2 w-auto"
+          >
+            <img src={Logo} alt="" className="w-5" />
+            <h1 className="text-2xl font-bold tracking-tight text-gray-200">
               Stodar
             </h1>
           </a>
 
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center  justify-between w-3/4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-200" />
               <input
                 type="search"
                 placeholder="Search..."
-                className="w-96 rounded-lg text-black border border-gray-200  py-2 pl-10 pr-4 outline-none "
+                className="w-96 rounded-lg text-gray-100 border border-gray-200  py-2 pl-10 pr-4 outline-none "
                 aria-label="Search"
               />
             </div>
 
-            <nav className="hidden md:flex md:space-x-1">
+            <nav className="hidden md:flex md:space-x-1 gap-13">
               {navigationLinks.map((link) => (
                 <NavLink key={link.name} href={link.href}>
                   {link.name}
