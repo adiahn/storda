@@ -1,12 +1,10 @@
 import Header from "./components/Header";
-import "../src/generals.css";
 
 function App() {
   return (
-    <>
+    <div className="font-system-ui">
       <Header />
-      
-    </>
+    </div>
   );
 }
 
