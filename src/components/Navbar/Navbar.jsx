@@ -15,10 +15,10 @@ const NavLink = ({ href, children }) => (
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigationLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Features", href: "/" },
+    { name: "Learn", href: "/learn" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact Us", href: "/contact" },
   ];
   return (
     <nav
@@ -27,7 +27,7 @@ const Navbar = () => {
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-9xl p-4 ">
-        <div className="flex h-16 items-center justify-evenly">
+        <div className="flex h-16 items-center justify-between px-10 md:px-5">
           <a
             href="/"
             className="flex items-center justify-between gap-2 w-auto"
@@ -38,7 +38,7 @@ const Navbar = () => {
             </h1>
           </a>
 
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center  justify-between w-3/4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-200" />
               <input
@@ -49,7 +49,7 @@ const Navbar = () => {
               />
             </div>
 
-            <nav className="hidden md:flex md:space-x-1">
+            <nav className="hidden md:flex md:space-x-1 gap-13">
               {navigationLinks.map((link) => (
                 <NavLink key={link.name} href={link.href}>
                   {link.name}
